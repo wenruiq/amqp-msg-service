@@ -1,0 +1,6 @@
+FROM mysql
+ENV MYSQL_ROOT_PASSWORD=message
+ENV MYSQL_DATABASE=message
+ENV MYSQL_USER=user
+ENV MYSQL_PASSWORD=message
+COPY init.sql /docker-entrypoint-initdb.d/

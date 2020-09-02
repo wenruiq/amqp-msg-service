@@ -1,0 +1,41 @@
+{
+  "name": "esdos",
+  "version": "1.0.0",
+  "description": "v2",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open",
+    "scss": "node-sass --watch ./dist/scss -o ./dist/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicpang/ESDOS.git"
+  },
+  "author": "ESDOS TEAM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicpang/ESDOS/issues"
+  },
+  "homepage": "https://github.com/nicpang/ESDOS#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.0.3",
+    "node-sass": "^4.13.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "core-js": "^3.6.4",
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0",
+    "regenerator-runtime": "^0.13.5",
+    "uniqid": "^5.2.0"
+  }
+}

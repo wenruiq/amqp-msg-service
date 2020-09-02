@@ -1,0 +1,42 @@
+Client-side software and folders:
+AMQPmessageclient folder
+message folder
+Run.bat
+setup.bat
+uninstall.bat
+mysql folder
+
+Server-side software and folders:
+loginpage folder
+public folder -> frontend server code
+services folder -> backend server code
+
+
+
+To set-up:
+1) AWS instance is created - Ubuntu
+2) Put all the server-side files into the instance
+3) Run kong-docker and konga-docker on AWS server. (Follow labs)
+3) Pull the Bugy github code into the AWS instance -> bugy is running on port 9000. UI on port 9000
+4) In the script server (Bugy), set each of the paths in bugy to the script server so the software knows how to execute the files
+5) AWS RDS -> run the databases.sql script. 
+6) AWS domain: http://esdosmessaging.tk
+7) Flask, Flask-cors, flask-socketio, flask-sqlalchemy, mysqlconnector, flask-dance, python-dotenv, json and sys needs to be installed on the server.
+8) GMAP_API_KEY and all other api keys are needed if you wish to setup the server yourself. 
+Please PM us for these keys! 
+You can also use our server if you want to test our code. 
+
+
+
+To run:
+1) Make sure that the server-side python files are already running. If not, AMQPmessageclient will
+crash. 
+2) Make sure docker is running.
+3) Click on Setup.bat. Once it's done, you will be redirect to our AWS server's login page.
+Log-in at this step with your SMU account (so that we can have your SMU credentials, else AMQPmessageclient will crash).
+4) Click on Run.bat. Enter your SMU ID when prompted.
+5) Once you're done using, click on Uninstall.bat
+6) Hi Prof, if you need to add contacts, you can only add contacts that have an SMU account and logged in before.
+For testing purposes, you can search for Qi Xuan/Samuel/Steffi or email us to log-in. We wiped the database to make it 
+slightly less laggy when you test. 
+7) You can also access the login page on noisy-quill.surge.sh

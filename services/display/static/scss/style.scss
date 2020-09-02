@@ -1,0 +1,379 @@
+$blue: #74b9ff;
+
+body {
+  background: url(../img/background2.jpeg) no-repeat center center fixed;
+  background-color:black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+}
+
+.container {
+  margin: 140px auto;
+  background: #fff;
+  padding: 0;
+  border-radius: 7px;
+}
+
+// Profile Image Circle
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+}
+
+// Tray to hold icons/text in a bar
+.icons-tray {
+  background: #eee;
+  padding: 10px 15px;
+  
+  .no-gutters {
+    padding: 0;
+  }
+  
+  &--right {
+    float: right;
+    
+    i {
+      margin-top: 15px;
+      font-size: 25px;
+      color: grey;
+      margin-left: 14px;
+      transition: .3s;
+      
+      &:hover {
+        color: $blue;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Group add tray
+.grp-add-tray{
+    background: #eee;
+    padding: 10px 15px;
+    
+    button{
+        margin-left: 10px;
+    }
+    
+    i{
+        display:flex; align-self:center; 
+        justify-self: center;
+        margin-right: 5px;
+    }
+    
+    .no-gutters {
+      padding: 0;
+    }
+    
+    
+}
+
+// Scroll Bar
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+background: rgb(207, 207, 207); 
+}
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+
+// Search box
+.search-box {
+    background: #fafafa;
+    padding: 8px 6px;
+  
+    .search {
+      background: #fff;
+      border-radius: 40px;
+      display: flex;
+      
+      i {
+        color: grey;
+        margin-left: 7px; 
+        vertical-align: middle;
+      }
+    }
+}
+
+.location-search-box{
+    background: #fafafa;
+    padding: 8px 6px;
+  
+    .search--location {
+      background: #fff;
+      border-radius: 40px;
+      display: flex;
+      
+      i {
+        color: grey;
+        margin-left: 7px; 
+        vertical-align: middle;
+      }
+    }
+}
+
+// Input fields
+input {
+    border: none;
+    border-radius: 30px;
+    width: 80%;
+    padding: 0px 10px;
+
+    &::placeholder {
+        color: #e3e3e3;
+        font-weight: 300;
+        margin-left: 20px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// Group name field
+.grp__field{
+    width: 100%;
+    padding: 0px 3px;
+    border-radius:5px;
+    text-align: center;
+}
+
+// Result list
+.results__list{
+    height: 50vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+// Search results bars
+.user-bar {
+  padding: 10px 15px;
+  display: flex;
+  vertical-align: baseline;
+  background: #fff;
+  transition: .3s ease;
+  
+  &--grey {
+    background: #eee;
+  }
+  
+  .text {
+    margin-left: 12px;
+    width: 70%;
+    
+    h6 {
+      margin-top: 6px;
+      margin-bottom: 0;
+    }
+    
+    p {
+      margin: 0;
+    }
+  }
+  
+  .time {
+    color: grey;
+  }
+  
+  &--onhover:hover {
+    background: $blue;
+    cursor: pointer;
+    
+    p,
+    h6,
+    .time {
+      color: #fff !important;
+    }
+  }
+  
+  &--active{
+      background-color: black;
+  }
+  
+  i{
+    color: grey;
+    &:hover {
+        color: $blue;
+        cursor: pointer;
+      }
+  }
+}
+
+// Contact list bars
+.user-bar-chat {
+    padding: 10px 15px;
+    display: flex;
+    vertical-align: baseline;
+    background: #fff;
+    transition: .3s ease;
+    color: rgb(33, 37, 41);
+    
+    &--grey {
+      background: #eee;
+    }
+    
+    .text {
+      margin-left: 12px;
+      width: 70%;
+      
+      h6 {
+        margin-top: 6px;
+        margin-bottom: 0;
+      }
+      
+      p {
+        margin: 0;
+      }
+    }
+    
+    .time {
+      color: grey;
+    }
+    
+    &--onhover:hover {
+      background: $blue;
+      cursor: pointer;
+      
+      p,
+      h6,
+      .time {
+        color: #fff !important;
+      }
+    }
+}
+
+// HR between search results/chat rooms
+hr {
+  margin: 5px auto;
+  width: 93%;
+}
+
+// Message list
+.message__list{
+    height: 50vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+
+.chat-bubble{
+    background: #eee;
+    padding: 10px 14px;
+    margin: 10px 20px;
+    border-radius: 9px;
+    &--right{
+        background: $blue;
+        color: white;
+    }
+}
+
+// .chat-bubble {
+//   padding: 10px 14px;
+//   background: #eee;
+//   margin: 10px 30px;
+//   border-radius: 9px;
+//   position: relative;
+//   animation: fadeIn 1s ease-in;
+  
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     width: 0;
+//     height: 0;
+//     border: 20px solid transparent;
+//     border-bottom: 0;
+//     margin-top: -10px;
+//   }
+  
+//   &--left {
+//      &:after {
+//       left: 0;
+//       border-right-color: #eee;
+// 	    border-left: 0;
+//       margin-left: -20px;
+//     }
+//   }
+  
+//   &--right {
+//     &:after {
+//       right: 0;
+//       border-left-color: $blue;
+// 	    border-right: 0;
+//       margin-right: -20px;
+//     }
+//   }
+// }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.offset-md-9 {
+  .chat-bubble {
+    background: $blue;
+    color: #fff;
+  }
+}
+
+
+.message-tray{
+    background: #eee;
+    display: flex;
+    align-items: baseline;
+    margin: 0;
+    padding: 10px 13px;
+    align-items: stretch;
+    bottom: 0;
+    i {
+        color: grey;
+        font-size: 30px;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+        transition: .3s;
+          
+          &:hover {
+            color: $blue;
+            cursor: pointer;
+          }
+      }
+    input{
+        border: none;
+        border-radius: 5px;
+        width: 90%;
+    }
+}
+
+#close--search{
+    &:hover{
+        color: $blue;
+        cursor: pointer;
+    }
+}
+
+#close--location{
+    &:hover{
+        color: $blue;
+        cursor: pointer;
+    }
+}
+
+#create--grp{
+    background-color: rgb(24, 153, 24);
+}

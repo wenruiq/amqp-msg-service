@@ -1,0 +1,10 @@
+os
+python-dotenv
+flask
+flask-dance
+flask-sqlalchemy
+flask-login
+flask-cors
+gunicorn
+blinker
+sqlalchemy-utils

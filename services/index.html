@@ -1,0 +1,48 @@
+<html>
+
+<head>
+
+    <title>ESDOS</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/livechat.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    
+$(document).ready(function(){
+
+    var socket = io.connect('http://192.168.1.118:5001');
+
+    socket.on('connect',function(){
+        socket.send('User has connected!');
+    });
+
+    socket.on('json',function(json){
+        $("#messages").append('<li>'+json.status+" " +json.error+ '</li>');
+    });
+    // 100398562385810757969
+    $('#sendbutton').on('click', function() {
+        socket.emit('json',
+            {"messagetext":$('#myMessage').val(),
+            "senderID": "106407095310475127292",
+            "receiverID": "100398562385810757969",
+            "isLocation": false});
+        console.log("sent")
+        $('#myMessage').val('');
+    });
+    
+});
+    
+    
+    </script>
+
+
+<ul id="messages"></ul>
+<input type="text" id="myMessage">
+<button id="sendbutton">Send</button>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap & Material Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Socket -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <title>ESDOS</title>
+</head>
+
+<body>
+    <script>
+        const preInit = () => {
+            // GET USERID FROM QUERY STRING & RETRIEVE CURR USER DATA
+            if (!localStorage.getItem("loggedIn") || localStorage.getItem("loggedIn") == null) {
+                const id = '{{user_id}}';
+                localStorage.setItem("loggedIn", id);
+            };
+            console.log(localStorage);
+        };
+        preInit();
+    </script>
+    <div class="container">
+        <div class="row no-gutters">
+            <!-- Left Column -->
+            <div class="col-md-4 border-right">
+                <!-- Current User Profile Markup -->
+                <div class="row-2" id="profile--bar">
+                    <div class="icons-tray" id="pepe-block">
+                        <div class="user-bar no-gutters user-bar--grey">
+                            <img class="profile-image" src="./img/pepe.jpg" alt="./pepe.jpg">
+                            <div class="text">
+                                <h6 class="">Pepe The Frog</h6>
+                                <p class="text-muted">pepe.frog.2018</p>
+                            </div>
+                            <span class="icons-tray--right">
+                                <i class="material-icons" id="grp--btn">group_add</i>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Create Group Markup -->
+                    <div class="grp-add-tray" style="display: none" id="grp-tray">
+                        <div class="user-bar no-gutters user-bar--grey">
+                            <i class="material-icons" id="close--grp">close</i>
+                            <input placeholder="Group Name" class="col-7 grp__field" type="text" required>
+                            <button type="button" class="btn btn-success btn-sm" id="create--grp">Create
+                                Group</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Search Bar -->
+                <div class="row-1">
+                    <div class="search-box">
+                        <form class="search">
+                            <i class="material-icons">search</i>
+                            <input placeholder="Search for a Friend" class="search__field" type="text">
+                            <i class="material-icons" id="close--search" style="visibility: hidden">close</i>
+                        </form>
+                    </div>
+                    <div class="location-search-box" style="display: none">
+                        <form class="search--location">
+                            <i class="material-icons">search</i>
+                            <input placeholder="Search for a Location" class="search__location__field" type="text">
+                            <i class="material-icons" id="close--location" style="visibility: hidden">close</i>
+                        </form>
+                    </div>
+                </div>
+                <!-- Chat Rooms/Search List -->
+                <div class="row-9">
+                    <div class="results__list">
+                        <!-- Chat Room Markup -->
+                        <!-- <a class="user-bar-chat user-bar--onhover" href="#useridexample" style="text-decoration: none;">
+                            <img class="profile-image" src="./img/sam.jpg" alt="./img/pepe.jpg">
+                            <div class="text">
+                                <h6 class="results__name">Sam</h6>
+                                <p class="text-muted">Hello, nice to meet you.</p>
+                            </div>
+                            <span class="time text-muted small">16:45</span>
+                        </a>
+                        <hr> -->
+                        <!-- Search Result Markup -->
+                        <!-- <div class="user-bar">
+                            <img class="profile-image" src="./img/pepefriend.jpg" alt="./img/pepe.jpg">
+                            <div class="text">
+                                <h6 class="results__name">Pepe Search</h6>
+                                <p class="text-muted">Username: pepe.friend.2018</p>
+                            </div>
+                            <i class="material-icons" id="add#useridexample">person_add</i>
+                        </div>
+                        <hr> -->
+                        
+                        <!-- Search Location Markup -->
+                        <!-- <div class="user-bar">
+                            <div class="text" style="width: 90%">
+                                <h6 class="results__name">Victoria Street, Singapore Management University, Singapore</h6>
+                                <p class="text-muted">81 Victoria St, Singapore 188065</p>
+                            </div>
+                            <i class="material-icons" style="align-self:center; zoom:130%" id="tbd">my_location</i>
+                        </div> -->
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-8">
+                <!-- Chat Room Profile Markup -->
+                <div class="row-2" id="top-bar">
+                    <div class="icons-tray">
+                        <div class="user-bar no-gutters user-bar--grey">
+                            <img class="profile-image" src="./img/robot.jpg" alt="Robot">
+                            <div class="text">
+                                <h6 class="">ESDOS Assistant</h6>
+                                <p class="text-muted">Welcome to ESDOS</p>
+                            </div>
+                            <!-- <span class="icons-tray--right">
+                                <i class="material-icons">icon placeholder</i>
+                            </span> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- List of messages -->
+                <div class="row-9">
+                    <div class="message__list" style="height: 50vh">
+                        <!-- Left bubble markup -->
+                        <div class="row no-gutters">
+                            <div class="col-6">
+                                <div class="chat-bubble">
+                                    Find your friends using the search bar to the left! :D
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right bubble markup -->
+                        <!-- <div class="row no-gutters">
+                            <div class="col offset-7">
+                                <div class="chat-bubble chat-bubble--right">
+                                    Hello! This message has to be long as well
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- Message sender bar -->
+                <div class="row-1">
+                    <div class="col-12" style="margin:0; border:0; padding:0">
+                        <form class="message-tray">
+                            <input placeholder="Type your message here..." class="message__field" type="text">
+                            <i class="material-icons" style="padding: 0 8px" id="init--location">my_location</i>
+                            <i class="material-icons" id='msg--btn'>send</i>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
