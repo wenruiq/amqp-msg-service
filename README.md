@@ -9,7 +9,7 @@
 
 <h3 align="center">AMQP Messaging Service (Click Image Above for Demo)</h3>
 <p align="center">
-  An instant messaging chat app powered by a Socket.IO and AMQP back end built with Flask
+  An instant messaging chat app powered by a back end built with Flask (Socket.IO + AMQP)
   </br>
   <a href="https://youtu.be/KMPdTMK-NJw"><strong>View Demo »</strong></a>
   </br>
