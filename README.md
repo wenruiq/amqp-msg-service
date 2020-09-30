@@ -20,10 +20,18 @@
 </p>
 </p>
 
+
+
 ## Disclaimer
 This is a school project done by a team of 5 students, the ***APIs have been taken down*** so there isn't a live demo available
 
 The original git repository for this project is set to private by the school so this is just a clone
+
+Credit goes to the entire team I was mainly in charge of building the front end of the app
+
+It is the source of inspiration for my personal project - [Chatty](https://github.com/wenruiq/chatty-wa)
+
+
 
 ## About the project
 In this project we built the backend of a messaging app by adopting the micro-service architecture
@@ -35,3 +43,35 @@ The project requires the database to be local and we mostly made use of SQL Alch
 * [Socket.IO](https://socket.io/)
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 * [SQL Alchemy](https://www.sqlalchemy.org/)
+
+
+
+## Roadmap
+
+See the [open issues](https://github.com/wenruiq/amqp-msg-service/issues) for a list of proposed features (and known issues)
+
+
+
+## Contributing
+
+The open source community is such an amazing place for us to be inspired, learn, and create. I **greatly appreciate** any contributions you make to this project!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AwesomeFeatures`)
+3. Commit your Changes (`git commit -m 'Added some awesome features'`)
+4. Push to the Branch (`git push origin feature/AmazingFeatures`)
+5. Open a Pull Request
+
+
+
+## License
+Distributed under the **[MIT license](http://opensource.org/licenses/mit-license.php)**
+
+
+
+## Contact
+
+Wenrui - wenrui119@gmail.com
+
+Project Link: [https://github.com/wenruiq/amqp-msg-service](https://github.com/wenruiq/amqp-msg-service)
+
